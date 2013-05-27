@@ -22,3 +22,4 @@ class Raffler.Views.EntriesIndex extends Backbone.View
     event.preventDefault()
     attributes = name: $('#new_entry_name').val()
     @collection.create attributes
+    $('#new_entry_name')[0].reset()

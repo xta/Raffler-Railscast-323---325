@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
   end
 
   def update
-    respond_with Entry.update(params[:id], params[:entry])
+    respond_with Entry.update(params[:id], update_winner_params)
   end
 
   def destroy
@@ -26,4 +26,7 @@ class EntriesController < ApplicationController
       params.require(:entry).permit(:name)
     end
 
+    def update_winner_params
+      params.require(:entry).permit(Entry::ALL_COLUMNS)
+    end
 end

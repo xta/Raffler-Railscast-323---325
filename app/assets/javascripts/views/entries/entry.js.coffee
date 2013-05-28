@@ -5,6 +5,11 @@ class Raffler.Views.Entry extends Backbone.View
 
   initialize: ->
     @model.on('change', @render, this)
+    @model.on('highlight', @highlightWinner, this)
+
+  highlightWinner: ->
+    $('.winner').removeClass('highlight')
+    @$('.winner').addClass('highlight')
 
   render: ->
     $(@el).html(@template(entry: @model))

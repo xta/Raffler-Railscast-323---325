@@ -5,6 +5,9 @@ Raffler::Application.routes.draw do
 
   root to: "main#index"
 
+  # catch all route per Railscast to end up at index
+  get '*path', to: 'main#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

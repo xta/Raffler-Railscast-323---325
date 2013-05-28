@@ -27,6 +27,6 @@ class EntriesController < ApplicationController
     end
 
     def update_winner_params
-      params.require(:entry).permit(Entry::ALL_COLUMNS)
+      params.require(:entry).permit(Entry::UPDATEABLE_COLUMNS)
     end
 end
